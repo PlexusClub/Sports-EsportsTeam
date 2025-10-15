@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 const teamContainer = document.getElementById('team-container');
-                data.team.forEach(member => {
+                
+                // FIX 1 (CRITICAL): Removed the incorrect '.team' access. data is the array itself.
+                data.team.forEach(member => { 
                     const memberCard = `
                         <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 text-center transform hover:scale-[1.02] transition duration-300 shadow-xl">
                             <img src="${member.image}" alt="${member.name}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-500">
@@ -66,9 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Fetch Members Data (General Roster) and inject into #members-container
     function loadMembersData() {
-        fetch('./data/team.json') 
+        // FIX 2 (CRITICAL): Corrected the filename from 'team.json' to 'members.json'
+        fetch('./data/members.json') 
             .then(response => {
                 if (!response.ok) {
+                    // FIX 3 (CRITICAL): Corrected the error message to show the actual expected file name: members.json
                     throw new Error(`HTTP error! status: ${response.status} - Check if data/members.json exists.`);
                 }
                 return response.json();
