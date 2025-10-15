@@ -1,0 +1,38 @@
+[
+  {
+    "title": "🏆 Head of Athletic Operations",
+    "description": "Oversees the organization, scheduling, and execution of all traditional sports competitions and leagues.",
+    "responsibilities": [
+      "Manage all aspects of ground logistics and equipment allocation.",
+      "Coordinate official referee/umpire duties for physical events.",
+      "Ensure adherence to rules and sportsmanship across all physical games."
+    ]
+  },
+  {
+    "title": "🎮 Head of E-Sports League",
+    "description": "Manages the administrative, competitive, and operational side of all digital tournaments and E-Sports teams.",
+    "responsibilities": [
+      "Oversee player registrations, brackets, and match scheduling for digital leagues.",
+      "Ensure all hardware and network requirements are met for broadcasts.",
+      "Lead strategic planning and talent recruitment for competitive squads."
+    ]
+  },
+  {
+    "title": "🏋️ Fitness & Training Coordinator",
+    "description": "Leads physical conditioning, fitness sessions, and provides training advice to promote overall physical wellness.",
+    "responsibilities": [
+      "Design and lead regular team practice sessions and warm-up drills.",
+      "Educate members on sports nutrition and injury prevention.",
+      "Organize health and wellness challenges for the club community."
+    ]
+  },
+  {
+    "title": "📈 Competitive Strategy Coordinator",
+    "description": "Focuses on strategic analysis for E-Sports, opponent scouting, and tracking performance metrics across all competitive platforms.",
+    "responsibilities": [
+      "Review competitive match VODs (Videos on Demand) to identify weaknesses.",
+      "Track individual and team performance statistics (K/D, goals, assists, etc.).",
+      "Provide pre-match scouting reports on opposing physical and digital teams."
+    ]
+  }
+]

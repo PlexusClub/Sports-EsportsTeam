@@ -1,0 +1,98 @@
+{
+  "team": [
+    {
+      "name": "G Chareeth Kumar",
+      "role": "Club Head (4C)",
+      "bio": "Oversees athletic logistics and manages tournament registration for physical sports.",
+      "image": "./resources/team/chareeth_kumar.jpg" 
+    },
+    {
+      "name": "Venkatesh",
+      "role": "Club Head (4A)",
+      "bio": "Specializes in E-Sports event organization, streaming production, and digital league management.",
+      "image": "./resources/team/venkatesh.jpg" 
+    },
+    {
+      "name": "Karthikeyan",
+      "role": "Coordinator (4A)",
+      "bio": "Leads physical fitness training, manages equipment, and coordinates external sports activities.",
+      "image": "./resources/team/karthikeyan.jpg"
+    },
+    {
+      "name": "Shrish",
+      "role": "Coordinator (3A)",
+      "bio": "Assists E-Sports teams with strategy analysis, recruitment, and competitive strategy development.",
+      "image": "./resources/team/shrish.jpg"
+    },
+    {
+      "name": "Nitish",
+      "role": "Coordinator (3A)",
+      "bio": "Focuses on organizing intramural games and managing recruitment for Year 3 squads.",
+      "image": "./resources/team/nitish.jpg"
+    },
+    {
+      "name": "Chandu",
+      "role": "Coordinator (3C)",
+      "bio": "Handles equipment inventory and on-field coordination for various tournaments.",
+      "image": "./resources/team/chandu.jpg"
+    },
+    {
+      "name": "G Tarun",
+      "role": "Coordinator (3C)",
+      "bio": "Supports E-Sports event logistics, ensuring smooth technical setup and match execution.",
+      "image": "./resources/team/g_tarun.jpg"
+    }
+  ],
+  "members": [
+    {
+      "name": "Nandhini",
+      "year": "2",
+      "section": "A"
+    },
+    {
+      "name": "Sangeetha",
+      "year": "2",
+      "section": "A"
+    },
+    {
+      "name": "Ganesh",
+      "year": "2",
+      "section": "A"
+    },
+    {
+      "name": "Rohini",
+      "year": "2",
+      "section": "B"
+    },
+    {
+      "name": "Anil",
+      "year": "2",
+      "section": "B"
+    },
+    {
+      "name": "Abhiram",
+      "year": "2",
+      "section": "B"
+    },
+    {
+      "name": "Dayakar",
+      "year": "2",
+      "section": "C"
+    },
+    {
+      "name": "Rakesh",
+      "year": "2",
+      "section": "C"
+    },
+    {
+      "name": "Jashwanth",
+      "year": "2",
+      "section": "C"
+    },
+    {
+      "name": "Shiva Shankar",
+      "year": "2",
+      "section": "C"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plexus Sports & E-Sports Team</title>
+
+    <meta name="description" content="Plexus Sports & E-Sports Team - The hub for physical fitness, traditional sports, competitive gaming, and digital tournaments.">
+    <meta name="keywords" content="Plexus Sports, E-Sports, fitness, competition, gaming, tournaments, team spirit, physical activity, digital sports">
+    <meta name="robots" content="index, follow">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen">
+    <nav class="fixed w-full bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="logo-container flex items-center space-x-2">
+                        <img src="https://plexusclub.github.io/assets/Plexus%20Logo.png" alt="Logo" class="h-10 w-10 object-contain">
+                        <span class="text-2xl font-bold">Plexus</span>
+                        <span class="text-2xl font-bold gradient-text">Sports & E-Sports</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="https://plexusclub.github.io/" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-300 hover:text-indigo-100 transition">Home</a>
+                        <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition">About</a>
+                        <a href="#team" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition">Team</a>
+                        <a href="#roles" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition">Roles</a>
+                        <a href="#members" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition">Members</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-300 hover:text-indigo-100 transition">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white transition">About</a>
+                <a href="#team" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white transition">Team</a>
+                <a href="#roles" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white transition">Roles</a>
+                <a href="#members" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white transition">Members</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Competition in Every <span class="gradient-text">Arena</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">
+                    We unify physical conditioning, competitive sportsmanship, and high-level E-Sports strategy to foster discipline and excellence.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#about" class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition duration-300 shadow-lg">
+                        View Tournaments
+                    </a>
+                    <a href="#team" class="px-6 py-3 border border-indigo-500 text-indigo-300 rounded-lg font-medium hover:bg-indigo-900/30 transition duration-300">
+                        Meet the Leaders
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-float">
+                <img src="https://plexusclub.github.io/assets/Plexus.png" alt="Sports and E-Sports Illustration" class="md:max-w-[300px] max-w-[200px] pb-[50px] mb:pb-[5px]">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                About <span class="gradient-text">Plexus Athletics</span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-6"></div>
+            <p class="text-gray-400 max-w-3xl mx-auto">
+                Our combined team fosters discipline, strategic thinking, and dedication across both the field and the digital battlefield.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gray-800/50 p-8 rounded-xl border border-gray-700 card-hover">
+                <div class="text-indigo-400 mb-4">
+                    <i class="fas fa-dumbbell text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Physical Conditioning</h3>
+                <p class="text-gray-300">
+                    Organizing workouts, training sessions, and traditional sports tournaments (e.g., cricket, football).
+                </p>
+            </div>
+
+            <div class="bg-gray-800/50 p-8 rounded-xl border border-gray-700 card-hover">
+                <div class="text-purple-400 mb-4">
+                    <i class="fas fa-gamepad text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Digital Strategy</h3>
+                <p class="text-gray-300">
+                    Forming competitive E-Sports teams, leading strategy analysis, and organizing major digital leagues.
+                </p>
+            </div>
+
+            <div class="bg-gray-800/50 p-8 rounded-xl border border-gray-700 card-hover">
+                <div class="text-pink-400 mb-4">
+                    <i class="fas fa-hands-helping text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Unified Competition</h3>
+                <p class="text-gray-300">
+                    Promoting teamwork, resilience, and discipline as core values, regardless of the competitive platform.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-800/30">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Meet Our <span class="gradient-text">Captains & Squad Leaders</span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-6"></div>
+            <p class="text-gray-400 max-w-3xl mx-auto">
+                The core leadership managing both physical athletics and E-Sports competitiveness.
+            </p>
+        </div>
+
+        <div id="team-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </section>
+
+    <section id="roles" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Our <span class="gradient-text">Key Roles</span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-6"></div>
+            <p class="text-gray-400 max-w-3xl mx-auto">
+                Positions specialized in organizing, coaching, and managing tournaments across all arenas.
+            </p>
+        </div>
+
+        <div id="roles-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            </div>
+    </section>
+    
+    <section id="members" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-800/30">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Our Dedicated <span class="gradient-text">Squad Members</span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-6"></div>
+            <p class="text-gray-400 max-w-3xl mx-auto">
+                The full roster of athletes and gamers driving the club's presence and success.
+            </p>
+        </div>
+
+        <div id="members-container" class="max-w-4xl mx-auto">
+            </div>
+    </section>
+
+
+    <footer class="bg-gray-900/80 border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-2xl font-bold gradient-text">Plexus Sports & E-Sports</span>
+                    <p class="text-gray-400 mt-2 max-w-md">
+                        The athletic and digital competition division of Plexus Club.
+                    </p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="https://www.instagram.com/plexus.aiml/" class="text-gray-400 hover:text-indigo-300 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://github.com/PlexusClub" class="text-gray-400 hover:text-indigo-300 transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/plexusaiml/" class="text-gray-400 hover:text-indigo-300 transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://x.com/Plexus_aiml" class="text-gray-400 hover:text-indigo-300 transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

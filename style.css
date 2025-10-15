@@ -1,0 +1,59 @@
+/*
+  This CSS provides essential styles for the Plexus Club pages, 
+  primarily focusing on custom elements and animations not covered by Tailwind CSS.
+*/
+
+/* 1. Gradient Text Definition (Crucial for the club's visual identity) */
+.gradient-text {
+    /* Uses the indigo/purple theme gradient */
+    background: linear-gradient(to right, #6366f1, #a855f7); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback */
+}
+
+/* 2. Hero Section Animations (To make the logo float) */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* 3. Card Hover Effect (Used for the 'About' section and roles) */
+.card-hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Global Dark Theme Setup */
+html.dark, body {
+    /* Ensures a consistent dark background */
+    background-color: #0d1222; 
+    color: #ffffff;
+}
+
+/* 5. Fade In Effect (Used on the Hero text) */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
