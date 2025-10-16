@@ -37,6 +37,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             })
             .catch(error => console.error('Error loading team data:', error));
+             fetch('./data/team.json') 
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status} - Check if data/team.json exists.`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const teamContainer = document.getElementById('team-container');
+                
+                // FIX 1 (CRITICAL): Removed the incorrect '.team' access. data is the array itself.
+                data.members.forEach(member => { 
+                    const memberCard = `
+                        <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 text-center transform hover:scale-[1.02] transition duration-300 shadow-xl">
+                            <img src="${member.image}" alt="${member.name}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-500">
+                            <h4 class="text-xl font-bold">${member.name}</h4>
+                            <p class="text-indigo-400 font-medium mb-2">${member.role}</p>
+                            <p class="text-sm text-gray-400">${member.bio}</p>
+                        </div>
+                    `;
+                    teamContainer.innerHTML += memberCard;
+                });
+            })
+            .catch(error => console.error('Error loading team data:', error));
     }
 
     // 2. Fetch Roles Data and inject into #roles-container
