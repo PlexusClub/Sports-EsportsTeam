@@ -1,142 +1,138 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+async function loadData() {
+  try {
+    const response = await fetch("./resources/data.json");
+    const plexusData = await response.json();
 
-    // Toggles the mobile menu visibility
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+    renderTeam(plexusData.team);
+    renderRoles(plexusData.roles);
+    renderGallery(plexusData.gallery);
+    setupMobileMenu();
+    setupScrolling();
+    setupFadeIn();
+  } catch (error) {
+    console.error("Error loading data:", error);
+  }
+}
+
+// Render team members
+function renderTeam(team) {
+  const teamContainer = document.getElementById("team-container");
+  teamContainer.innerHTML = "";
+
+  [...team.heads, ...team.coordinators,...team.members].forEach(member => {
+    teamContainer.innerHTML += `
+      <div class="bg-gray-800/50 rounded-xl border border-gray-700 overflow-hidden card-hover">
+        <div class="relative h-64">
+          <img src="${member.image}" alt="${member.name}" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4">
+            <h3 class="text-xl font-bold text-white">${member.name}</h3>
+            <p class="text-indigo-300">${member.role}</p>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-300 mb-4">${member.bio}</p>
+          <div class="flex space-x-4">
+            ${member.social.linkedin ? `<a href="${member.social.linkedin}" class="text-gray-400 hover:text-indigo-300 transition"><i class="fab fa-linkedin"></i></a>` : ""}
+            ${member.social.github ? `<a href="${member.social.github}" class="text-gray-400 hover:text-indigo-300 transition"><i class="fab fa-github"></i></a>` : ""}
+            ${member.social.twitter ? `<a href="${member.social.twitter}" class="text-gray-400 hover:text-indigo-300 transition"><i class="fab fa-twitter"></i></a>` : ""}
+            ${member.social.instagram ? `<a href="${member.social.instagram}" class="text-gray-400 hover:text-indigo-300 transition"><i class="fab fa-instagram"></i></a>` : ""}
+            ${member.social.behance ? `<a href="${member.social.behance}" class="text-gray-400 hover:text-indigo-300 transition"><i class="fab fa-behance"></i></a>` : ""}
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+// Render roles
+function renderRoles(roles) {
+  const rolesContainer = document.getElementById("roles-container");
+  rolesContainer.innerHTML = "";
+
+  roles.forEach(role => {
+    const responsibilitiesHTML = role.responsibilities
+      .map(res => `<li class="flex items-start mb-2"><i class="fas fa-check text-indigo-400 mt-1 mr-2"></i><span class="text-gray-300">${res}</span></li>`)
+      .join("");
+
+    rolesContainer.innerHTML += `
+      <div class="role-card p-6 rounded-xl border border-gray-700">
+        <div class="${role.color} mb-4">
+          <i class="${role.icon} text-3xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-4">${role.title}</h3>
+        <ul class="text-sm">${responsibilitiesHTML}</ul>
+      </div>
+    `;
+  });
+}
+
+// Render gallery
+function renderGallery(gallery) {
+  const galleryContainer = document.getElementById("gallery-container");
+  galleryContainer.innerHTML = "";
+
+  gallery.forEach(item => {
+    const cardHTML = `
+      <div class="group relative rounded-xl overflow-hidden card-hover h-64">
+        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+          <h3 class="text-white font-bold text-lg mb-1">${item.title}</h3>
+          <p class="text-gray-300 text-sm line-clamp-3">${item.description}</p>
+          <span class="w-[max-content] inline-block mt-2 px-2 py-1 bg-indigo-600/80 text-white text-xs rounded-full">${item.type}</span>
+        </div>
+      </div>
+    `;
+
+    galleryContainer.innerHTML += item.link
+      ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer">${cardHTML}</a>`
+      : cardHTML;
+  });
+}
+
+// Mobile menu
+function setupMobileMenu() {
+  const button = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+
+  button.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+
+  document.querySelectorAll("#mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => menu.classList.add("hidden"));
+  });
+}
+
+// Smooth scrolling
+function setupScrolling() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", e => {
+      e.preventDefault();
+      const targetId = anchor.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: "smooth"
         });
-    }
+      }
+    });
+  });
+}
 
-    // --- Dynamic Content Loading for Sports-EsportsTeam ---
+// Fade-in animation
+function setupFadeIn() {
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("fade-in");
+    });
+  }, { threshold: 0.1 });
 
-    // 1. Fetch Team Data (Leadership) and inject into #team-container
-    function loadTeamData() {
-        fetch('./data/team.json') 
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status} - Check if data/team.json exists.`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const teamContainer = document.getElementById('team-container');
-                
-                // FIX 1 (CRITICAL): Removed the incorrect '.team' access. data is the array itself.
-                data.team.forEach(member => { 
-                    const memberCard = `
-                        <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 text-center transform hover:scale-[1.02] transition duration-300 shadow-xl">
-                            <img src="${member.image}" alt="${member.name}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-500">
-                            <h4 class="text-xl font-bold">${member.name}</h4>
-                            <p class="text-indigo-400 font-medium mb-2">${member.role}</p>
-                            <p class="text-sm text-gray-400">${member.bio}</p>
-                        </div>
-                    `;
-                    teamContainer.innerHTML += memberCard;
-                });
-            })
-            .catch(error => console.error('Error loading team data:', error));
-             fetch('./data/team.json') 
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status} - Check if data/team.json exists.`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const teamContainer = document.getElementById('team-container');
-                
-                // FIX 1 (CRITICAL): Removed the incorrect '.team' access. data is the array itself.
-                data.members.forEach(member => { 
-                    const memberCard = `
-                        <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 text-center transform hover:scale-[1.02] transition duration-300 shadow-xl">
-                            <img src="${member.image}" alt="${member.name}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-500">
-                            <h4 class="text-xl font-bold">${member.name}</h4>
-                            <p class="text-indigo-400 font-medium mb-2">${member.role}</p>
-                            <p class="text-sm text-gray-400">${member.bio}</p>
-                        </div>
-                    `;
-                    teamContainer.innerHTML += memberCard;
-                });
-            })
-            .catch(error => console.error('Error loading team data:', error));
-    }
+  sections.forEach(section => observer.observe(section));
+}
 
-    // 2. Fetch Roles Data and inject into #roles-container
-    function loadRolesData() {
-        fetch('./data/roles.json') 
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status} - Check if data/roles.json exists.`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const rolesContainer = document.getElementById('roles-container');
-                data.forEach(role => {
-                    const roleCard = `
-                        <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 card-hover">
-                            <h3 class="text-xl font-semibold mb-3 gradient-text">${role.title}</h3>
-                            <p class="text-gray-300 mb-2">${role.description}</p>
-                            <ul class="list-disc list-inside text-sm text-gray-400 mt-3 space-y-1">
-                                ${role.responsibilities.map(r => `<li>${r}</li>`).join('')}
-                            </ul>
-                        </div>
-                    `;
-                    rolesContainer.innerHTML += roleCard;
-                });
-            })
-            .catch(error => console.error('Error loading roles data:', error));
-    }
-
-    // 3. Fetch Members Data (General Roster) and inject into #members-container
-    function loadMembersData() {
-        // FIX 2 (CRITICAL): Corrected the filename from 'team.json' to 'members.json'
-        fetch('./data/members.json') 
-            .then(response => {
-                if (!response.ok) {
-                    // FIX 3 (CRITICAL): Corrected the error message to show the actual expected file name: members.json
-                    throw new Error(`HTTP error! status: ${response.status} - Check if data/members.json exists.`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const membersContainer = document.getElementById('members-container');
-                
-                // Group members by year for a cleaner display
-                const membersByYear = data.reduce((acc, member) => {
-                    (acc[member.year] = acc[member.year] || []).push(member);
-                    return acc;
-                }, {});
-
-                let membersHtml = '';
-
-                // Create a card for each year group
-                for (const year in membersByYear) {
-                    const memberNames = membersByYear[year].map(m => `
-                        <span class="inline-block bg-gray-700/50 text-gray-200 text-sm px-4 py-1.5 rounded-full mr-2 mb-3 border border-gray-600">
-                            ${m.name} (${m.section})
-                        </span>
-                    `).join('');
-
-                    membersHtml += `
-                        <div class="bg-gray-900/50 p-6 rounded-xl border border-indigo-700 mb-6">
-                            <h3 class="text-xl font-bold gradient-text mb-4">Year ${year} Members</h3>
-                            <div class="flex flex-wrap">
-                                ${memberNames}
-                            </div>
-                        </div>
-                    `;
-                }
-
-                membersContainer.innerHTML = membersHtml;
-            })
-            .catch(error => console.error('Error loading members data:', error));
-    }
-
-    // Initialize data loading
-    loadTeamData();
-    loadRolesData();
-    loadMembersData(); 
-});
+// Initialize
+document.addEventListener("DOMContentLoaded", loadData);

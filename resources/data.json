@@ -1,0 +1,172 @@
+{
+  "team": {
+    "heads": [
+      {
+        "name": "G. Chareeth Kumar",
+        "role": "Head, Physical Sports (4C)",
+        "bio": "Leads all traditional sports operations, focusing on physical conditioning and tournament execution.",
+        "image": "./resources/gallery/chethan.jpg",
+        "social": {
+          "instagram": "https://www.instagram.com/[chareeth_insta]",
+          "github": "",
+          "linkedin": "https://www.linkedin.com/in/gchareethkumar/"
+        }
+      },
+      {
+        "name": "Venkatesh",
+        "role": "Head, E-Sports Division (4A)",
+        "bio": "Drives competitive gaming strategy, manages digital leagues, and oversees broadcast production.",
+        "image": "./resources/gallery/Venkatesh Reddy.jpeg.jpg",
+        "social": {
+          "instagram": "https://www.instagram.com/[venkatesh_insta]",
+          "github": "",
+          "linkedin": "https://www.linkedin.com/in/venkatesh-esports/"
+        }
+      }
+    ],
+    "coordinators": [
+      {
+        "name": "Karthikeyan",
+        "role": "Coordinator - Physical Training (4A)",
+        "bio": "Responsible for managing equipment inventory, organizing practice schedules, and fitness drills.",
+        "image": "./resources/members/karthikeyan.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Shrish",
+        "role": "Coordinator - Competitive Strategy (3A)",
+        "bio": "Analyzes opponent data, scouts talent, and assists E-Sports captains with in-game strategy.",
+        "image": "./resources/gallery/SHRISH MARUGE.jpg",
+        "social": { "github": "", "linkedin": "" }
+      }
+    ],
+    "members": [
+      {
+        "name": "Nandhini",
+        "role": "Team Member (2A)",
+        "bio": "Contributor to intramural events and team coordination.",
+        "image": "./resources/members/nandhini.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Sangeetha",
+        "role": "Team Member (2A)",
+        "bio": "Focuses on event logistics and participant registration.",
+        "image": "./resources/members/sangeetha.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Ganesh",
+        "role": "Team Member (2A)",
+        "bio": "Active participant in E-Sports leagues and community engagement.",
+        "image": "./resources/members/ganesh.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Rohini",
+        "role": "Team Member (2B)",
+        "bio": "Assists with field setup and athletic event management.",
+        "image": "./resources/gallery/Rohini Chakraborty.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Anil",
+        "role": "Team Member (2B)",
+        "bio": "Core team member for team roster management and match scheduling.",
+        "image": "./resources/members/anil.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Nitish",
+        "role": "Team Member (3A)",
+        "bio": "Contributor to physical conditioning workshops and fitness drives.",
+        "image": "./resources/members/nitish.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Chandu",
+        "role": "Team Member (3C)",
+        "bio": "Assists with E-Sports tournament execution and technical setup.",
+        "image": "./resources/gallery/Chandu Patel.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "G Tarun",
+        "role": "Team Member (3C)",
+        "bio": "Focuses on organizing competitive gaming events and player onboarding.",
+        "image": "./resources/members/g_tarun.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Abhiram",
+        "role": "Team Member (2B)",
+        "bio": "Enthusiastic participant and volunteer for large-scale sports events.",
+        "image": "./resources/gallery/Abhiram Sura.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Dayakar",
+        "role": "Team Member (2C)",
+        "bio": "Assists with promotion and digital communication for matches.",
+        "image": "./resources/members/dayakar.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Rakesh",
+        "role": "Team Member (2C)",
+        "bio": "Contributor to sports scoring and result tabulation.",
+        "image": "./resources/members/rakesh.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Jashwanth",
+        "role": "Team Member (2C)",
+        "bio": "Helps manage team rosters and player eligibility.",
+        "image": "./resources/members/jashwanth.jpg",
+        "social": { "github": "", "linkedin": "" }
+      },
+      {
+        "name": "Shiva Shankar",
+        "role": "Team Member (2C)",
+        "bio": "Active member of the E-Sports player community and training sessions.",
+        "image": "./resources/members/shiva_shankar.jpg",
+        "social": { "github": "", "linkedin": "" }
+      }
+    ]
+  },
+  "roles": [
+    {
+      "title": "Physical Sports Management",
+      "icon": "fas fa-trophy",
+      "responsibilities": [
+        "Tournament Organization: Scheduling, venue preparation, and rule enforcement for physical games.",
+        "Training: Leading fitness drills and managing equipment.",
+        "Team Captaincy: Providing on-field leadership for various teams."
+      ],
+      "color": "text-indigo-400"
+    },
+    {
+      "title": "E-Sports Strategy & Broadcast",
+      "icon": "fas fa-gamepad",
+      "responsibilities": [
+        "League Management: Organizing digital leagues, handling registrations, and result tracking.",
+        "Strategy: Analyzing gameplay, scouting opponents, and assisting with team composition.",
+        "Production: Managing live stream setup and commentary during key matches."
+      ],
+      "color": "text-purple-400"
+    },
+    {
+      "title": "Unified Logistics",
+      "icon": "fas fa-sitemap",
+      "responsibilities": [
+        "Coordination: Managing volunteers and resources for both physical and digital events.",
+        "Documentation: Recording match results, player statistics, and event reports.",
+        "Recruitment: Identifying and onboarding new talent for all competitive arenas."
+      ],
+      "color": "text-pink-400"
+    }
+  ],
+  "gallery": [
+    
+  ]
+}
